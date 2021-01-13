@@ -5,3 +5,8 @@
 /.vs/MongoDB/v16
 /MongoDB/bin/
 /MongoDB/obj
+/.vs/MongoDB/DesignTimeBuild
+/MongoDB.Domain/bin/
+/MongoDB.Domain/obj
+/MongoDB.Infrastrutcture/bin
+/MongoDB.Infrastrutcture/obj

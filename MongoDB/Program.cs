@@ -1,9 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MongoDB.Domain.Repository;
+using MongoDB.Infrastrutcture.Repository;
 
 namespace MongoDB
 {
@@ -18,7 +16,13 @@ namespace MongoDB
             Host.CreateDefaultBuilder(args)
                 .ConfigureServices((hostContext, services) =>
                 {
-                    services.AddHostedService<TestWorker>();
+                    services.AddSingleton<IUserRepository, UserRepository>();
+
+
+
+                    services.AddHostedService<UserWorker>();
+
+                    services.Configure<MongoDatabaseConfig>(hostContext.Configuration.GetSection("MongoDatabaseConfig"));
                 });
     }
 }
