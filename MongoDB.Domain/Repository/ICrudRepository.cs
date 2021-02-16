@@ -22,6 +22,8 @@ namespace MongoDB.Domain.Repository
         #endregion
 
         #region Update
+
+        void ReplaceOne(string fieldFilter, object valueFilter, T valueUpdate);
         void UpdateMany(string fieldFilter, object value, string fieldUpdate, object valueUpdate);
 
         void UpdateManyAsync(string fieldFilter, object value, string fieldUpdate, object valueUpdate);

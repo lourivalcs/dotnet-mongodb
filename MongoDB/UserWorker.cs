@@ -1,9 +1,7 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using MongoDB.Domain.Model;
 using MongoDB.Domain.Repository;
-using MongoDB.Infrastrutcture.Repository;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
@@ -53,7 +51,8 @@ namespace MongoDB
             Address address = new Address()
             {
                 StreetAddress = "Rua XXXX",
-                City = "YYYYY"
+                City = "YYYYY",
+                State = "ZZ"
             };
 
             //update value with filter

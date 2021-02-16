@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB", "MongoDB\MongoDB.csproj", "{0647330E-1D20-4353-9734-3302CA753059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Domain", "MongoDB.Domain\MongoDB.Domain.csproj", "{02E3828B-443D-480A-8E09-824FEF624E7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB.Domain", "MongoDB.Domain\MongoDB.Domain.csproj", "{02E3828B-443D-480A-8E09-824FEF624E7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Infrastrutcture", "MongoDB.Infrastrutcture\MongoDB.Infrastrutcture.csproj", "{F7014AF7-55AC-45F4-94D3-D3CD89530B92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoDB.Infrastrutcture", "MongoDB.Infrastrutcture\MongoDB.Infrastrutcture.csproj", "{F7014AF7-55AC-45F4-94D3-D3CD89530B92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDBApi", "MongoDBApi\MongoDBApi.csproj", "{00B28CA5-292A-400C-9ECF-CC142050EAEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F7014AF7-55AC-45F4-94D3-D3CD89530B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7014AF7-55AC-45F4-94D3-D3CD89530B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7014AF7-55AC-45F4-94D3-D3CD89530B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B28CA5-292A-400C-9ECF-CC142050EAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B28CA5-292A-400C-9ECF-CC142050EAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B28CA5-292A-400C-9ECF-CC142050EAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B28CA5-292A-400C-9ECF-CC142050EAEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

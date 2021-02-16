@@ -48,7 +48,7 @@ namespace MongoDB.Infrastrutcture.Database
         {
             var query = MongoCollection.AsQueryable();
 
-            if(filter != null)
+            if (filter != null)
                 return query.Where(filter);
 
             return query;
@@ -56,6 +56,13 @@ namespace MongoDB.Infrastrutcture.Database
         #endregion
 
         #region Update
+        public void ReplaceOne(string fieldFilter, object valueFilter, T valueUpdate)
+        {
+            var filter = Builders<T>.Filter.Eq(fieldFilter, valueFilter);
+
+            MongoCollection.ReplaceOne(filter, valueUpdate);
+        }
+
         public void UpdateMany(string fieldFilter, object value, string fieldUpdate, object valueUpdate)
         {
             var filter = Builders<T>.Filter.Eq(fieldFilter, value);

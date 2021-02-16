@@ -18,8 +18,6 @@ namespace MongoDB
                 {
                     services.AddSingleton<IUserRepository, UserRepository>();
 
-
-
                     services.AddHostedService<UserWorker>();
 
                     services.Configure<MongoDatabaseConfig>(hostContext.Configuration.GetSection("MongoDatabaseConfig"));

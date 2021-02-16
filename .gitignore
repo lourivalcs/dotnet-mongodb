@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/MongoDB/v16
+/.vs
 /MongoDB/bin/
 /MongoDB/obj
 /.vs/MongoDB/DesignTimeBuild
@@ -10,3 +10,5 @@
 /MongoDB.Domain/obj
 /MongoDB.Infrastrutcture/bin
 /MongoDB.Infrastrutcture/obj
+/MongoDBApi/obj
+/MongoDBApi/bin
