@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using MongoDB.Domain.Model;
+using MongoDB.Domain.ModelDTO;
 using MongoDB.Domain.Repository;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,33 +12,43 @@ namespace MongoDBApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserRepository _userRepository;
-        public UserController(ILogger<UserController> logger, IUserRepository userRepository)
+        public UserController(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
 
         [HttpGet("{id}")]
-        public User Find(string idUser)
+        public IActionResult Find(string id)
         {
-            return _userRepository.Filter(f => f.Id == idUser).FirstOrDefault();
+            var user = _userRepository.Filter(f => f.Id == id).FirstOrDefault();
+
+            if (user == null)
+                return NotFound();
+            else
+                return Ok(new UserDto(user));
         }
 
         [HttpGet]
-        public List<User> FindAll()
+        public IActionResult FindAll()
         {
-            return _userRepository.Filter().ToList();
+            var users = _userRepository.Filter().AsEnumerable();
+
+            if (users.Any())
+                return Ok(users.Select(user => new UserDto(user)).ToList());
+            else
+                return NotFound();
         }
 
         [HttpPost]
-        public void Insert(User user)
+        public void Insert(UserDto user)
         {
-            _userRepository.InsertOne(user);
+            _userRepository.InsertOne(new User(user));
         }
 
         [HttpPut]
-        public void Update(User user)
+        public void Update(UserDto user)
         {
-            _userRepository.ReplaceOne("Id", user.Id, user);
+            _userRepository.ReplaceOne("Id", user.Id, new User(user));
         }
 
         [HttpDelete]
